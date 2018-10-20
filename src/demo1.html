@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <style>
+        .container {
+            position: relative;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .title {
+            position: fixed;
+            left: 5%;
+            width: 25%;
+            height: 600px;
+            /* overflow: scroll; */
+            /*任何时候都强制显示滚动条*/
+            overflow: auto;
+            /*需要的时候会出现滚动条*/
+            overflow-x: auto;
+            /*控制X方向的滚动条*/
+            overflow-y: auto;
+            /*控制Y方向的滚动条*/
+        }
+
+        .content {
+            float: right;
+            width: 70%;
+        }
+
+        .title-title a {
+            display: block;
+        }
+
+        .title-title:first-child p {
+            /* display: none; */
+            color: red
+        }
+
+        .title-title:first-child p~a {
+            /* display: none; */
+            color: red
+        }
+
+        .active {
+            display: block !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <div class="items-title">
+                <div class="title-title">
+                    <a href="#items-title1">
+                        标题1
+                        <a href="#items-content-1-1">1.1</a>
+                        <a href="#items-content-1-2">
+                            1.2
+                            <a href="#items-content-1-2-1">1.2.1</a>
+                            <a href="#items-content-1-2-2">1.2.2</a>
+                            <a href="#items-content-1-2-3">1.2.3</a>
+                        </a>
+                        <a href="#items-content-1-3">1.3</a>
+                        <a href="#items-content-1-4">1.4</a>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="items-title">
+                <h5 class="title-title">
+                    <a href="#items-title2">标题2</a>
+                    <h6>
+                        <a href="#items-content-2-1">2.1</a>
+                    </h6>
+                    <h6>
+                        <a href="#items-content-2-2">2.2</a>
+                    </h6>
+                    <h6>
+                        <a href="#items-content-2-3">2.3</a>
+                    </h6>
+                    <h6>
+                        <a href="#items-content-2-4">2.4</a>
+                    </h6>
+
+                </h5>
+
+            </div>
+            <div class="items-title">
+                <h5 class="title-title">
+                    <a href="#items-title3">标题3</a>
+                </h5>
+                <div class="title-content">
+                    <h6>
+                        <a href="#items-content-3-1">3.1</a>
+                    </h6>
+                    <h6>
+                        <a href="#items-conten-3-2">3.2</a>
+                    </h6>
+                    <h6>
+                        <a href="#items-content-3-3">3.3</a>
+                    </h6>
+                    <h6>
+                        <a href="#items-content-3-4">3.4</a>
+                    </h6>
+                </div>
+
+            </div>
+            <div class="items-title">
+                <h5 class="title-title">
+                    <a href="items-title4">标题4</a>
+                </h5>
+                <div class="title-content">
+                    <h6>
+                        <a href="#items-content-4-1">4.1</a>
+                    </h6>
+                    <h6>
+                        <a href="#items-content-4-2">4.2</a>
+                    </h6>
+                    <h6>
+                        <a href="#items-content-4-3">4.3</a>
+                    </h6>
+                    <h6>
+                        <a href="#items-content-4-4">4.4</a>
+                    </h6>
+                </div>
+
+            </div>
+            <div class="items-title">
+                <h5 class="title-title">
+                    <a href="items-title5">标题5</a>
+                </h5>
+                <div class="title-content">
+                    <h6>
+                        <a href="#items-content-5-1">5.1</a>
+                    </h6>
+                    <h6>
+                        <a href="#items-content-5-2">5.2</a>
+                    </h6>
+                    <h6>
+                        <a href="#items-content5-5-3">5.3</a>
+                    </h6>
+                    <h6>
+                        <a href="#items-content-5-4">5.4</a>
+                    </h6>
+                </div>
+
+            </div>
+            <div class="items-title">
+                <h5 class="title-title">
+                    <a href="items-title6">标题6</a>
+                </h5>
+                <div class="title-content">
+                    <h6>
+                        <a href="#items-content-6-1">6.1</a>
+                    </h6>
+                    <h6>
+                        <a href="#items-content-6-2">6.2</a>
+                    </h6>
+                    <h6>
+                        <a href="#items-content-6-3">6.3</a>
+                    </h6>
+                    <h6>
+                        <a href="#items-content-6-4">6.4</a>
+                    </h6>
+                </div>
+
+            </div>
+            <div class="items-title">
+                <h5 class="title-title">
+                    <a href="#items-title7">标题7</a>
+                </h5>
+
+            </div> -->
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="items-content">
+            <div id="items-title1" class="items-content-title">
+                我是标题1
+            </div>
+            <div class="items-content-content">
+                <div id="items-content-1-1">
+                    <h6>我是标题1.1</h6>
+                    <p>我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容,我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,
+                        我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容,
+                    </p>
+                </div>
+                <div id="items-content-1-2">
+                    <h6>我是标题1.2</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+                <div id="items-content-1-3">
+                    <h6>我是标题1.3</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+                <div id="items-content-1-4">
+                    <h6>我是标题1.4</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="items-content">
+            <div id="items-title2" class="items-content-title">
+                我是标题2
+            </div>
+            <div class="items-content-content">
+                <div id="items-content-2-1">
+                    <h6>我是标题2.1</h6>
+                    <p>我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容,我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,
+                        我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容,
+                    </p>
+                </div>
+                <div id="items-content-2-2">
+                    <h6>我是标题2.2</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+                <div id="items-content-2-3">
+                    <h6>我是标题2.3</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+                <div id="items-content-2-4">
+                    <h6>我是标题2.4</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="items-content">
+            <div id="items-title3" class="items-content-title">
+                我是标题3
+            </div>
+            <div class="items-content-content">
+                <div id="items-content-3-1">
+                    <h6>我是标题3.1</h6>
+                    <p>我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容,我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,
+                        我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容,
+                    </p>
+                </div>
+                <div id="items-content-3-2">
+                    <h6>我是标题3.2</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+                <div id="items-content-3-3">
+                    <h6>我是标题3.3</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+                <div id="items-content-3-4">
+                    <h6>我是标题3.4</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="items-content">
+            <div id="items-title4" class="items-content-title">
+                我是标题4
+            </div>
+            <div class="items-content-content">
+                <div id="items-content-4-1">
+                    <h6>我是标题4.1</h6>
+                    <p>我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容,我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,
+                        我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容,
+                    </p>
+                </div>
+                <div id="items-content-4-2">
+                    <h6>我是标题4.2</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+                <div id="items-content-4-3">
+                    <h6>我是标题4.3</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+                <div id="items-content-4-4">
+                    <h6>我是标题4.4</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="items-content">
+            <div id="items-title5" class="items-content-title">
+                我是标题4
+            </div>
+            <div class="items-content-content">
+                <div id="items-content-5-1">
+                    <h6>我是标题5.1</h6>
+                    <p>我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容,我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,
+                        我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容,
+                    </p>
+                </div>
+                <div id="items-content-5-2">
+                    <h6>我是标题5.2</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+                <div id="items-content-5-3">
+                    <h6>我是标题5.3</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+                <div id="items-content-5-4">
+                    <h6>我是标题5.4</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="items-content">
+            <div id="items-title6" class="items-content-title">
+                我是标题4
+            </div>
+            <div class="items-content-content">
+                <div id="items-content-6-1">
+                    <h6>我是标题6.1</h6>
+                    <p>我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容,我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容, 我是标题1.1的内容,
+                        我是标题1.1的内容, 我是标题1.1的内容,我是标题1.1的内容,
+                    </p>
+                </div>
+                <div id="items-content-6-2">
+                    <h6>我是标题6.2</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+                <div id="items-content-6-3">
+                    <h6>我是标题6.3</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+                <div id="items-content-6-4">
+                    <h6>我是标题6.4</h6>
+                    <p>我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,我是标题1.2的内容,
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        var oTitleTitle = document.getElementsByClassName('title-title');
+        // var oTitleContent = document.getElementsByClassName('title-content');
+        // var oTitle = document.getElementsByClassName('title')[0];
+        //var len = oTitleTitle.length;
+        click(oTitleTitle);
+
+        function click(arr) {
+            var len = arr.length;
+            console.log(1);
+            if (len > 0) {
+                console.log(len);
+                for (var i = 0; i < len - 1; i++) {
+                    console.log(i);
+                    // (function (j) {
+                    //     console.log(3);
+                    //     arr[j].addEventListener('click', function (e) {
+                    //         if (arr[j].childNodes.length > 0 && arr[j].childNodes[arr[j].childNodes.length - 1].nodeType == 1) {
+                    //             e.preventDefault();
+                    //             for (var k = 0; k < arr[j].childNodes.length; k++) {
+                    //                 if (!arr[j].childNodes[k].classList.contains('active')) {
+                    //                     arr[j].childNodes[k].classList.add('active');
+                    //                 } else {
+                    //                     arr[j].childNodes[k].classList.remove('active');
+                    //                 }
+
+                    //             }
+                    //             click(arr[j].childNodes);
+                    //         }
+                    //     })
+                    // })(i)
+                }
+            }
+
+        }
+
+        // for (var i = 0; i < len - 1; i++) {
+        //     (function (j) {
+        //         oTitleTitle[j].addEventListener('click', function (e) {
+        //             if (oTitleContent[j].childNodes.length > 0) {
+        //                 e.preventDefault();
+        //                 console.log(j);
+        //                 if (!oTitleContent[j].classList.contains('active')) {
+        //                     oTitleContent[j].classList.add('active');
+        //                 } else {
+        //                     oTitleContent[j].classList.remove('active');
+        //                 }
+
+        //             }
+        //         })
+        //     })(i)
+        // }
+
+    </script>
+
+</body>
+
+</html>

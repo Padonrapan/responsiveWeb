@@ -1,0 +1,39 @@
+    <div class="container">
+        <p class="clearfix">我是浮动</p>
+        <p class="clearfix">我是浮动</p>
+        <p class="clearfix">我是浮动</p>
+    </div>
+
+    当父元素没设置高度时,由于内部元素浮动脱离正常文档流,会导致父元素高度塌陷.解决方法
+
+    1.在最后一个字子元素下边加一个空的块级元素设置属性clear:both。{<div style="clear:both"></div>}。结构与样式不分离
+
+    2在父元素上设置属性overflow:hiddle;
+
+    3.在父元素上也设置一个浮动属性
+
+    4.在最后一个子元素的后面加一个块级伪元素：原理与第一种方法类似,但是不会多出一个空元素，导致结构与样式不分离
+    .container::after {
+            content: '.';
+            display: block;
+            height: 0;//高度一定要设置,visibility:hidden只是不在页面显示,但是会存在,若不设为0会破坏原有高度
+            clear: both;
+            visibility: hidden;
+        }
+        或者
+        {
+         .container::after {
+            content: ' ';
+            display: table;
+            clear: both;
+        }
+        }
+ 
+    解决高度塌陷:触发BFC
+
+    触发条件：
+
+        1.float不为none
+        2.overflow不为visible
+        3.display:table-cell || table-caption || inline-block
+        4.position:absolute || fixed

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>高度重叠</title>
+    <style>
+        /* .container::before,
+        .container::after {
+            content: ' ';
+            display: table;
+
+        }
+
+        .container::after {
+
+            clear: both;
+        } */
+
+        .container {
+            position: absolute;
+        }
+
+        .top {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin-bottom: 100px;
+
+        }
+
+        .bottom {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">
+            我在上面
+        </div>
+        <div class="bottom">
+            我在下面
+        </div>
+    </div>
+
+
+</body>
+
+</html>

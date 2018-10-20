@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>清除浮动</title>
+    <style>
+        .container {
+            background: rgba(20, 20, 20, 0.2);
+            /* overflow: auto; */
+            /* float: left; */
+            /* position: absolute; */
+            /* position: fixed; */
+            /* display: inline-block */
+            /* display: table-cell; */
+            /* display: table-caption */
+        }
+
+        .clearfix {
+            float: left;
+        }
+
+        /* .container::after {
+            content: '.';
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        } */
+
+        .container::after {
+            content: ' ';
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p class="clearfix">我是浮动</p>
+        <p class="clearfix">我是浮动</p>
+        <p class="clearfix">我是浮动</p>
+        <!-- <div style="clear:both"></div> -->
+    </div>
+</body>
+
+</html>
